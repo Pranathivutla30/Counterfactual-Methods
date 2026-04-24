@@ -1,0 +1,13 @@
+Quartile,Method,NDCG@10
+Q1 (Rare),Naive,0.3387
+Q1 (Rare),IPS,0.3392
+Q1 (Rare),CRM,0.3412
+Q2,Naive,0.3716
+Q2,IPS,0.3708
+Q2,CRM,0.3699
+Q3,Naive,0.3792
+Q3,IPS,0.3753
+Q3,CRM,0.378
+Q4 (Popular),Naive,0.4273
+Q4 (Popular),IPS,0.4271
+Q4 (Popular),CRM,0.4309

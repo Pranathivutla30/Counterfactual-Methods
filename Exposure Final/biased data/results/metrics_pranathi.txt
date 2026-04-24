@@ -1,0 +1,11 @@
+NCF Model Evaluation - Pranathi Dataset
+=====================================
+Test Loss (MSE): 0.0945
+Test MAE: 0.2380
+Test RMSE: 0.3075
+
+Dataset Info:
+- Total users: 15400
+- Total items: 1000
+- Training samples: 243340
+- Test samples: 68364

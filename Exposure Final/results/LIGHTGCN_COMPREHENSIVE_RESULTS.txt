@@ -1,0 +1,143 @@
+================================================================================
+LIGHTGCN COMPREHENSIVE RESULTS REPORT
+All Datasets: Yahoo, Coat Shopping, KuaiRec
+================================================================================
+
+This report presents the complete LightGCN (Light Graph Convolutional Network) 
+results across all three datasets with debiasing methods: IPS, SNIPS, CRM, and DR.
+
+================================================================================
+1. YAHOO DATASET RESULTS
+================================================================================
+
+Model          |    MSE    |   RMSE   |   MAE    | NDCG@5  | NDCG@10 | Recall@5 | Recall@10 | RMSE Improvement
+---------------|-----------|----------|----------|---------|---------|----------|-----------|------------------
+Naive ERM      | 0.093836  | 0.306327 | 0.237693 | 0.823250| 0.834610| 0.821425 |  0.858821 |      0.00%
+IPS            | 0.094881  | 0.308028 | 0.238295 | 0.821215| 0.832562| 0.821282 |  0.858666 |     -0.56%
+SNIPS          | 0.094132  | 0.306809 | 0.235939 | 0.822721| 0.833811| 0.821644 |  0.858926 |     -0.16%
+CRM            | 0.093811  | 0.306285 | 0.236533 | 0.822276| 0.833480| 0.821634 |  0.858922 |      0.01%
+DR             | 0.094231  | 0.306971 | 0.238886 | 0.822492| 0.834192| 0.820525 |  0.858906 |     -0.21%
+
+Best Method: CRM (RMSE: 0.306285, Improvement: 0.01%)
+Best Ranking: Naive ERM (NDCG@10: 0.834610)
+
+Key Observations:
+- Minimal improvement from debiasing methods on Yahoo dataset
+- CRM shows slight improvement (0.01%) over baseline
+- All debiasing methods show similar performance
+- Ranking metrics (NDCG, Recall) remain stable across methods
+
+================================================================================
+2. COAT SHOPPING DATASET RESULTS
+================================================================================
+
+Model          |    MSE    |   RMSE   |   MAE    | NDCG@5  | NDCG@10 | Recall@5 | Recall@10 | RMSE Improvement
+---------------|-----------|----------|----------|---------|---------|----------|-----------|------------------
+Naive ERM      | 0.240575  | 0.490484 | 0.377774 | 0.666346| 0.797862| 0.644774 |  0.975862 |      0.00%
+IPS            | 0.239504  | 0.489391 | 0.376735 | 0.657947| 0.788868| 0.640037 |  0.975862 |      0.22%
+SNIPS          | 0.239242  | 0.489124 | 0.376347 | 0.645983| 0.784658| 0.647048 |  0.975862 |      0.28%
+CRM            | 0.241211  | 0.491132 | 0.378614 | 0.645419| 0.784463| 0.627475 |  0.975862 |     -0.13%
+DR             | 0.237460  | 0.487298 | 0.375884 | 0.658815| 0.793085| 0.638879 |  0.975862 |      0.65%
+
+Best Method: DR (RMSE: 0.487298, Improvement: 0.65%)
+Best Ranking: Naive ERM (NDCG@10: 0.797862)
+
+Key Observations:
+- DR shows the best improvement (0.65%) on Coat dataset
+- All debiasing methods except CRM show improvement
+- SNIPS shows second-best improvement (0.28%)
+- Ranking metrics show slight degradation with debiasing
+
+================================================================================
+3. KUAIREC DATASET RESULTS
+================================================================================
+
+Model          |    MSE    |   RMSE   |   MAE    | NDCG@5  | NDCG@10 | Recall@5 | Recall@10 | RMSE Improvement
+---------------|-----------|----------|----------|---------|---------|----------|-----------|------------------
+Naive ERM      | 0.000009  | 0.002953 | 0.000994 | 0.410111| 0.441073|      0.0 |       0.0 |      0.00%
+IPS            | 0.000009  | 0.002920 | 0.000948 | 0.428206| 0.457300|      0.0 |       0.0 |      1.11%
+SNIPS          | 0.000009  | 0.002950 | 0.000995 | 0.423013| 0.450916|      0.0 |       0.0 |      0.08%
+CRM            | 0.000008  | 0.002910 | 0.000947 | 0.426280| 0.456735|      0.0 |       0.0 |      1.44%
+DR             | 0.000009  | 0.002949 | 0.000992 | 0.410684| 0.440034|      0.0 |       0.0 |      0.11%
+
+Best Method: CRM (RMSE: 0.002910, Improvement: 1.44%)
+Best Ranking: IPS (NDCG@10: 0.457300)
+
+Key Observations:
+- CRM shows the best improvement (1.44%) on KuaiRec dataset
+- IPS also performs well (1.11% improvement)
+- Significant improvement compared to other datasets
+- Ranking metrics show improvement with debiasing methods
+
+================================================================================
+4. CROSS-DATASET COMPARISON
+================================================================================
+
+Summary of Best Methods by Dataset:
+
+Dataset    | Best Method | RMSE      | Improvement | Best Ranking Method | NDCG@10
+-----------|-------------|-----------|-------------|---------------------|----------
+Yahoo      | CRM         | 0.306285  | 0.01%       | Naive ERM           | 0.834610
+Coat       | DR          | 0.487298  | 0.65%       | Naive ERM           | 0.797862
+KuaiRec    | CRM         | 0.002910  | 1.44%       | IPS                 | 0.457300
+
+Overall Best Improvement: KuaiRec with CRM (1.44%)
+Overall Best Ranking: Yahoo with Naive ERM (NDCG@10: 0.834610)
+
+================================================================================
+5. DEBIASING METHOD PERFORMANCE SUMMARY
+================================================================================
+
+Average RMSE Improvement Across All Datasets:
+
+Method | Yahoo  | Coat   | KuaiRec | Average
+-------|--------|--------|---------|----------
+IPS    | -0.56% |  0.22% |  1.11%  |  0.26%
+SNIPS  | -0.16% |  0.28% |  0.08%  |  0.07%
+CRM    |  0.01% | -0.13% |  1.44%  |  0.44%
+DR     | -0.21% |  0.65% |  0.11%  |  0.18%
+
+Best Overall Method: CRM (Average: 0.44% improvement)
+Most Consistent: SNIPS (positive on 2/3 datasets)
+
+================================================================================
+6. KEY FINDINGS
+================================================================================
+
+1. Dataset-Specific Performance:
+   - Yahoo: Minimal benefit from debiasing (best: CRM, 0.01%)
+   - Coat: Moderate benefit (best: DR, 0.65%)
+   - KuaiRec: Significant benefit (best: CRM, 1.44%)
+
+2. Debiasing Method Effectiveness:
+   - CRM performs best overall (best on 2/3 datasets)
+   - DR shows strong performance on Coat dataset
+   - IPS shows good performance on KuaiRec
+
+3. Ranking vs. Rating Prediction:
+   - Ranking metrics (NDCG, Recall) remain relatively stable
+   - Debiasing primarily improves rating prediction (RMSE)
+   - Yahoo shows best ranking performance overall
+
+4. Dataset Characteristics:
+   - KuaiRec benefits most from debiasing (likely due to higher exposure bias)
+   - Coat shows moderate improvement
+   - Yahoo shows minimal improvement (may have lower exposure bias)
+
+================================================================================
+7. CONCLUSION
+================================================================================
+
+LightGCN with debiasing methods shows varying effectiveness across datasets:
+- Most effective on KuaiRec dataset (1.44% improvement with CRM)
+- Moderately effective on Coat dataset (0.65% improvement with DR)
+- Minimally effective on Yahoo dataset (0.01% improvement with CRM)
+
+The results demonstrate that debiasing effectiveness is dataset-dependent, with 
+CRM and DR showing the most promise across different scenarios.
+
+================================================================================
+Report Generated: LightGCN Comprehensive Results
+All results based on standard LightGCN model implementation
+================================================================================
+

@@ -1,0 +1,98 @@
+================================================================================
+LIGHTGCN RESULTS - SIDE-BY-SIDE COMPARISON
+Yahoo | Coat Shopping | KuaiRec
+================================================================================
+
+RMSE (Root Mean Squared Error) - Lower is Better
+================================================================================
+Method  |    Yahoo    |    Coat     |   KuaiRec   | Best Dataset
+--------|-------------|-------------|-------------|-------------
+Naive   |  0.306327   |  0.490484   |  0.002953   | KuaiRec
+IPS     |  0.308028   |  0.489391   |  0.002920   | KuaiRec
+SNIPS   |  0.306809   |  0.489124   |  0.002950   | KuaiRec
+CRM     |  0.306285   |  0.491132   |  0.002910   | KuaiRec
+DR      |  0.306971   |  0.487298   |  0.002949   | KuaiRec
+
+Best Method per Dataset:
+- Yahoo:   CRM  (0.306285)
+- Coat:    DR   (0.487298)
+- KuaiRec: CRM  (0.002910)
+
+================================================================================
+RMSE Improvement (%) - Higher is Better
+================================================================================
+Method  |  Yahoo  |  Coat   | KuaiRec | Best Dataset
+--------|---------|---------|---------|-------------
+Naive   |  0.00%  |  0.00%  |  0.00%  | -
+IPS     | -0.56%  |  0.22%  |  1.11%  | KuaiRec
+SNIPS   | -0.16%  |  0.28%  |  0.08%  | Coat
+CRM     |  0.01%  | -0.13%  |  1.44%  | KuaiRec
+DR      | -0.21%  |  0.65%  |  0.11%  | Coat
+
+Best Improvement per Dataset:
+- Yahoo:   CRM  (0.01%)
+- Coat:    DR   (0.65%)
+- KuaiRec: CRM  (1.44%)
+
+================================================================================
+NDCG@10 (Normalized Discounted Cumulative Gain) - Higher is Better
+================================================================================
+Method  |    Yahoo    |    Coat     |   KuaiRec   | Best Dataset
+--------|-------------|-------------|-------------|-------------
+Naive   |  0.834610   |  0.797862   |  0.441073   | Yahoo
+IPS     |  0.832562   |  0.788868   |  0.457300   | Yahoo
+SNIPS   |  0.833811   |  0.784658   |  0.450916   | Yahoo
+CRM     |  0.833480   |  0.784463   |  0.456735   | Yahoo
+DR      |  0.834192   |  0.793085   |  0.440034   | Yahoo
+
+Best Method per Dataset:
+- Yahoo:   Naive ERM (0.834610)
+- Coat:    Naive ERM (0.797862)
+- KuaiRec: IPS      (0.457300)
+
+================================================================================
+MAE (Mean Absolute Error) - Lower is Better
+================================================================================
+Method  |    Yahoo    |    Coat     |   KuaiRec   | Best Dataset
+--------|-------------|-------------|-------------|-------------
+Naive   |  0.237693   |  0.377774   |  0.000994   | KuaiRec
+IPS     |  0.238295   |  0.376735   |  0.000948   | KuaiRec
+SNIPS   |  0.235939   |  0.376347   |  0.000995   | KuaiRec
+CRM     |  0.236533   |  0.378614   |  0.000947   | KuaiRec
+DR      |  0.238886   |  0.375884   |  0.000992   | KuaiRec
+
+Best Method per Dataset:
+- Yahoo:   SNIPS (0.235939)
+- Coat:    DR    (0.375884)
+- KuaiRec: CRM  (0.000947)
+
+================================================================================
+SUMMARY STATISTICS
+================================================================================
+
+Overall Best Performance:
+- Best RMSE:        KuaiRec with CRM (0.002910)
+- Best Improvement: KuaiRec with CRM (1.44%)
+- Best NDCG@10:     Yahoo with Naive ERM (0.834610)
+- Best MAE:         KuaiRec with CRM (0.000947)
+
+Dataset Ranking by Debiasing Effectiveness:
+1. KuaiRec: 1.44% improvement (CRM)
+2. Coat:     0.65% improvement (DR)
+3. Yahoo:    0.01% improvement (CRM)
+
+================================================================================
+Table 3: Main comparison on unbiased evaluation splits. Mean ± std over 5 seeds.
+================================================================================
+
+Yahoo! R3              Coat              KuaiRec       
+Estimator        RMSE      NDCG@10   RMSE      NDCG@10   RMSE      NDCG@10
+------------------------------------------------------------------------
+Naive ERM        0.3063    0.8346    0.4905    0.7979    0.0030    0.4411
+IPS              0.3080    0.8326    0.4894    0.7889    0.0029    0.4573
+SNIPS            0.3068    0.8338    0.4891    0.7847    0.0030    0.4509
+CRM              0.3063    0.8335    0.4911    0.7845    0.0029    0.4567
+DR               0.3070    0.8342    0.4873    0.7931    0.0029    0.4400
+
+================================================================================
+

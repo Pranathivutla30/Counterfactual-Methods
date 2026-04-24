@@ -1,0 +1,10 @@
+Dataset,Architecture,relative_ESS
+YAHOO,MF,
+YAHOO,NCF,
+YAHOO,LightGCN,
+COAT,MF,
+COAT,NCF,
+COAT,LightGCN,
+KUAIREC,MF,
+KUAIREC,NCF,
+KUAIREC,LightGCN,

@@ -1,0 +1,10 @@
+Dataset,Architecture,Model,RMSE,MAE,NDCG@5,NDCG@10,Recall@5,Recall@10
+YAHOO,MF,Naive ERM,,,,,,,
+YAHOO,NCF,Naive ERM,,,,,,,
+YAHOO,LightGCN,Naive ERM,,,,,,,
+COAT,MF,Naive ERM,,,,,,,
+COAT,NCF,Naive ERM,,,,,,,
+COAT,LightGCN,Naive ERM,,,,,,,
+KUAIREC,MF,Naive ERM,,,,,,,
+KUAIREC,NCF,Naive ERM,,,,,,,
+KUAIREC,LightGCN,Naive ERM,,,,,,,
