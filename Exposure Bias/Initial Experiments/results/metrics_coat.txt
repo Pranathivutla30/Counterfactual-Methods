@@ -1,0 +1,11 @@
+NCF Model Evaluation - Coat Shopping Dataset
+=====================================
+Test Loss (MSE): 0.0781
+Test MAE: 0.2240
+Test RMSE: 0.2795
+
+Dataset Info:
+- Total users: 290
+- Total items: 300
+- Training samples: 9280
+- Test samples: 2320

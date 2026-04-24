@@ -1,0 +1,51 @@
+
+================================================================================
+Matrix Factorization with Debiasing Methods - Evaluation Report
+KuaiRec Dataset
+================================================================================
+
+Dataset Information:
+- Total users: 7176
+- Total items: 10728
+- Training samples: 10,021,757
+- Test samples: 2,509,049
+
+================================================================================
+Methods Evaluated:
+================================================================================
+1. Baseline MF (No debiasing)
+2. IPS - Inverse Propensity Scoring
+3. SNIPS - Self-Normalized IPS
+4. CRM - Counterfactual Risk Minimization
+5. DR - Doubly Robust Estimator
+
+================================================================================
+Results Summary:
+================================================================================
+        Model      MSE     RMSE      MAE  RMSE_Improvement_%
+  Baseline MF 0.159001 0.398749 0.397476                0.00
+          IPS 0.164604 0.405714 0.405176               -1.75
+        SNIPS 0.164782 0.405934 0.405434               -1.80
+          CRM 0.164782 0.405934 0.405434               -1.80
+Doubly Robust 0.162536 0.403158 0.402527               -1.11
+
+================================================================================
+Best Performing Model: Baseline MF
+Best RMSE: 0.398749
+Improvement over Baseline: 0.00%
+================================================================================
+
+Key Findings:
+1. Debiasing methods applied to Matrix Factorization model
+2. All methods evaluated on KuaiRec dataset
+3. Results saved to debiasing_results_kuairec_mf.csv
+4. Visualization saved to debiasing_comparison_kuairec_mf.png
+
+Generated Files:
+- mf_kuairec_baseline.keras (Baseline model)
+- mf_kuairec_ips.keras (IPS model)
+- mf_kuairec_snips.keras (SNIPS model)
+- mf_kuairec_crm.keras (CRM model)
+- mf_kuairec_dr.keras (DR model)
+- debiasing_results_kuairec_mf.csv (Detailed results)
+- debiasing_comparison_kuairec_mf.png (Visualization)

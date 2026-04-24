@@ -1,0 +1,61 @@
+
+================================================================================
+ExpoMF with Debiasing Methods - Evaluation Report
+Yahoo! Music R3 Dataset
+================================================================================
+
+Dataset Information:
+- Total users: 290
+- Total items: 300
+- Training samples: 5,510
+- Test samples: 1,450
+
+================================================================================
+Methods Evaluated:
+================================================================================
+1. ExpoMF - Exposure Matrix Factorization (explicit exposure modeling)
+2. IPS - Inverse Propensity Scoring
+3. SNIPS - Self-Normalized IPS
+4. CRM - Counterfactual Risk Minimization
+5. DR - Doubly Robust Estimator
+
+================================================================================
+Results Summary:
+================================================================================
+        Model      MSE     RMSE      MAE  RMSE_Improvement_%
+       ExpoMF 0.097123 0.311645 0.266443                0.00
+          IPS 0.096756 0.311056 0.265902                0.19
+        SNIPS 0.097711 0.312588 0.267471               -0.30
+          CRM 0.097752 0.312653 0.267554               -0.32
+Doubly Robust 0.097637 0.312470 0.267294               -0.26
+
+================================================================================
+Best Performing Model: IPS
+Best RMSE: 0.3111
+Improvement over ExpoMF: 0.19%
+================================================================================
+
+Key Findings:
+1. ExpoMF explicitly models exposure bias through learned exposure probabilities
+2. IPS achieves the best overall results
+3. Methods perform differently on rare vs popular items
+4. Comparison shows effectiveness of different debiasing approaches
+
+Generated Files:
+- expomf_baseline.keras (ExpoMF model)
+- expomf_ips.keras (IPS model)
+- expomf_snips.keras (SNIPS model)
+- expomf_crm.keras (CRM model)
+- expomf_dr.keras (DR model)
+- expomf_debiasing_results.csv (Detailed results)
+- expomf_debiasing_comparison.png (Visualization)
+- expomf_performance_by_popularity.png (Quartile analysis)
+
+================================================================================
+Conclusion:
+================================================================================
+This implementation compares ExpoMF (explicit exposure modeling) with traditional
+debiasing techniques (IPS, SNIPS, CRM, DR). The results demonstrate different
+approaches to handling exposure bias in recommendation systems.
+
+================================================================================

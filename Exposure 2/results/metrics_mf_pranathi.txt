@@ -1,0 +1,12 @@
+Matrix Factorization Model Evaluation - Pranathi Dataset
+=====================================
+Test Loss (MSE): 0.0946
+Test MAE: 0.2507
+Test RMSE: 0.3076
+
+Dataset Info:
+- Total users: 15400
+- Total items: 1000
+- Training samples: 243340
+- Test samples: 68364
+- Embedding size: 32

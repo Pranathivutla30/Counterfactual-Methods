@@ -1,0 +1,11 @@
+NCF Model Evaluation - KuaiRec Dataset
+=====================================
+Test Loss (MSE): 0.0000
+Test MAE: 0.0009
+Test RMSE: 0.0029
+
+Dataset Info:
+- Total users: 7176
+- Total items: 10728
+- Training samples: 10021757
+- Test samples: 2509049
